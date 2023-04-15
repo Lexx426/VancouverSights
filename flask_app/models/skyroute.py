@@ -30,6 +30,7 @@ def set_start_and_end(start_point, end_point):
         elif change_point == "o":
             start_point = get_start()
         elif change_point == "d":
+
             end_point = get_end()
         else:
             print("Oops, that isn't 'o', 'd', or 'b'...")

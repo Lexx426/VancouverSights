@@ -13,9 +13,43 @@
         <h3> Where are you coming from? </h3>
         <div class="input-group mb-3">
             <div class="input-group-prepend">
-                <label class="input-group-text" for="inputGroupSelect01">Landmarks</label>
+                <label class="input-group-text" for="start_point">Start point:</label>
             </div>
-            <select class="custom-select" id="inputGroupSelect01">
+            <select class="custom-select" id="start_point">
+                <option selected>Choose...</option>
+                <option value="1">Marine Building</option>
+                <option value="2">Scotiabank Field at Nat Bailey Stadium</option>
+                <option value="3">Vancouver Aquarium</option>
+                <option value="4">Vancouver Lookout</option>
+                <option value="5">Canada Place</option>
+                <option value="6">Cathedral of Our Lady of the Holy Rosary</option>
+                <option value="7">Library Square</option>
+                <option value="8">B.C. Place Stadium</option>
+                <option value="9">Lions Gate Bridge</option>
+                <option value="10">Gastown Steam Clock</option>
+                <option value="11">Waterfront Station</option>
+                <option value="12">Granville Street</option>
+                <option value="13">Prospect Point Lighthouse</option>
+                <option value="14">Queen Elizabeth Theatre</option>
+                <option value="15">Stanley Park</option>
+                <option value="16">Granville Island Public Market</option>
+                <option value="17">Kitsilano Beach</option>
+                <option value="18">Dr. Sun Yat-Sen Classical Chinese Garden</option>
+                <option value="19">Museum of Vancouver</option>
+                <option value="20">Science World</option>
+                <option value="21">Robson Square</option>
+                <option value="22">Samson V Maritime Museum</option>
+                <option value="23">Burnaby Lake</option>
+                <option value="24">Nikkei National Museum & Cultural Centre</option>
+                <option value="25">Central Park</option>
+                <option value="26">Pacific Central Station</option>
+            </select>
+        <h3> Where do you want to go? </h3>
+        <div class="input-group mb-3">
+            <div class="input-group-prepend">
+                <label class="input-group-text" for="end_point">Landmarks</label>
+            </div>
+            <select class="custom-select" id= "end_point">
                 <option selected>Choose...</option>
                 <option value="1">Marine Building</option>
                 <option value="2">Scotiabank Field at Nat Bailey Stadium</option>
@@ -45,6 +79,8 @@
                 <option value="26">Pacific Central Station</option>
             </select>
         </div>
+        <button type="submit" onclick="loadRoute()" class="btn btn-primary">Let's go!</button>
+        <!-- load route will be bring maybe another box with the routes? overall it needs to show the shortest routes between the 2 landmarks. Go to the W3 AJAX -->
     </form>
 </body>
 </html>
