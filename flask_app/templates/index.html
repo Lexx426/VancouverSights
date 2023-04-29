@@ -9,13 +9,13 @@
 </head>
 <body>
     <h1> Vancouver's Sights!</h1>
-    <form> 
+    <form action="/landmarks" method="post" id="landmarks" name="landmarks"> 
         <h3> Where are you coming from? </h3>
         <div class="input-group mb-3">
             <div class="input-group-prepend">
                 <label class="input-group-text" for="start_point">Start point:</label>
             </div>
-            <select class="custom-select" id="start_point">
+            <select class="custom-select" id="start_point" name="start_point">
                 <option selected>Choose...</option>
                 <option value="1">Marine Building</option>
                 <option value="2">Scotiabank Field at Nat Bailey Stadium</option>
@@ -49,7 +49,7 @@
             <div class="input-group-prepend">
                 <label class="input-group-text" for="end_point">Landmarks</label>
             </div>
-            <select class="custom-select" id= "end_point">
+            <select class="custom-select" id= "end_point" name="end_point">
                 <option selected>Choose...</option>
                 <option value="1">Marine Building</option>
                 <option value="2">Scotiabank Field at Nat Bailey Stadium</option>
@@ -79,7 +79,7 @@
                 <option value="26">Pacific Central Station</option>
             </select>
         </div>
-        <button type="submit" onclick="loadRoute()" class="btn btn-primary">Let's go!</button>
+        <button type="submit" onclick="loadRoute()" class="btn btn-primary" form="landmarks">Let's go!</button>
         <!-- load route will be bring maybe another box with the routes? overall it needs to show the shortest routes between the 2 landmarks. Go to the W3 AJAX -->
     </form>
 </body>

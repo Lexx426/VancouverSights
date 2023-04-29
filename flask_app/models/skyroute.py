@@ -1,3 +1,4 @@
+import pdb
 from flask_app.models.graph_search import bfs, dfs
 from flask_app.models.vc_metro import vc_metro
 from flask_app.models.vc_landmarks import vc_landmarks
@@ -78,8 +79,9 @@ def show_landmarks():
         print(landmark_string)
 
 def get_route(start_point, end_point):
-    start_stations = vc_landmarks[start_point]
-    end_stations = vc_landmarks[end_point]
+    pdb.set_trace()
+    start_stations = vc_landmarks[landmark_choices[start_point]]
+    end_stations = vc_landmarks[landmark_choices[end_point]]
     routes = []
     for start_station in start_stations:
         for end_station in end_stations:
@@ -109,5 +111,5 @@ def get_active_stations():
 def goodbye():
     print("Thanks for using SkyRoute!")
 # print(get_route('Marine Building', 'Robson Square'))
-skyroute()
+# skyroute()
 
