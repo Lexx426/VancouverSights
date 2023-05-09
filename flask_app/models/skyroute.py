@@ -79,7 +79,7 @@ def show_landmarks():
         print(landmark_string)
 
 def get_route(start_point, end_point):
-    pdb.set_trace()
+    # pdb.set_trace()
     start_stations = vc_landmarks[landmark_choices[start_point]]
     end_stations = vc_landmarks[landmark_choices[end_point]]
     routes = []
