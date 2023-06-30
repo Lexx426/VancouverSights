@@ -82,6 +82,7 @@ def get_route(start_point, end_point):
     # pdb.set_trace()
     start_stations = vc_landmarks[landmark_choices[start_point]]
     end_stations = vc_landmarks[landmark_choices[end_point]]
+    # only thing that is different ^ Tommy changed because I was being dumb, do not remember his explaination
     routes = []
     for start_station in start_stations:
         for end_station in end_stations:
