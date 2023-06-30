@@ -21,16 +21,48 @@
 
     // xhttp.open("GET", "ajax_info.txt", true);
     // xhttp.send();
-
+document.getElementById('button').addEventListener('click', loadText);
 function loadDoc() {
     var xhttp = new XMLHttpRequest();
+    xhttp.open("GET", "/static/javascript/ajax_info.txt", true);
     xhttp.onload = function(){
-        document.getElementById("demo").innerHTML = this.responseText;
+        if (xhttp.status == 200){
+            document.getElementById("text").innerHTML = this.responseText;
+            // right now, the text is not shown because it is not status 200 rather 404 where it can not find the  text
         }
-    xhttp.open("GET", "ajax_info.txt", true);
+    }
+    xhttp.onerror = function(){
+        console.log( " request error ")
+    }
     xhttp.send();
 }
 
-// function loadDoc(){
-//     console.log("it works");
-// }
+
+document.getElementById('button2').addEventListener('click', loadText);
+function loadResults() {
+    var xhttp = new XMLHttpRequest();
+    xhttp.open("POST", "localhost", true);
+    // inside the url_for() we should be putting the address of our site .... so index from (def index())?  or /route
+
+    // Url_for() -by referencing the function name in flask, you will get acccess to the route ("/"). so URL_for('submit_landmarks') would return/show you '/landmarks'
+    
+    xhttp.setRequestHeader('Content-type', 'application/x-www-form-urlencoded');
+    // added Request header. important because otherwise the actual data that you send will not be sent
+    xhttp.onload = function(){
+        if (xhttp.status == 200){
+            document.getElementById("result").innerHTML = this.responseText;
+            var dataReply = JSON.parse(this.responseText)
+            // if I am sending back a dictionary you would have to parse it.  
+            console.log(dataReply)// test it out, he had alert(dataReply)
+        }
+    }
+    xhttp.onerror = function(){
+        console.log( " request error ")
+    }
+    dataSend = JSON.stringify({
+        'start_point' : start_point,
+        'end_point' : end_point
+    });
+    xhttp.send(dataSend);
+    // you have to pass in some variables.
+}
